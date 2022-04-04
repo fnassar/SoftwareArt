@@ -1,16 +1,8 @@
 #include "ofApp.h"
 
-using std::vector;
-
 //--------------------------------------------------------------
 void ofApp::setup(){
-	ofBackground(10, 10, 10);
-	screenWidth = ofGetScreenWidth();
-	screenHeight = ofGetScreenHeight();
-	for (int i = 0; i < 50; i++) {
-		lines1[i] = {100 + (float)i*3, 100, 100 + (float)i*3, screenHeight - 100};// x1, y1, x2, y2
-		lines2[i] = {screenWidth - 100 - (float)i*3, 100, screenWidth - 100 - (float)i*3, screenHeight - 100};// x1, y1, x2, y2
-	}
+
 }
 
 //--------------------------------------------------------------
@@ -20,9 +12,7 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-	for (int i = 0; i < 50; i++) {
-		ofDrawLine()
-	}
+
 }
 
 //--------------------------------------------------------------
