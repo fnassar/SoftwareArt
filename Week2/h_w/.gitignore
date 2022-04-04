@@ -1,4 +1,8 @@
-bin
+*.dll
+*.exe
+*.exp
+*.lib
+*.pdb
 .vs
 obj
 addons.make
