@@ -1,0 +1,9 @@
+bin
+.vs
+obj
+addons.make
+icon.rc
+h_w.sln
+h_w.vcxproj
+h_w.vcxproj.filters
+h_w.vcxproj.user

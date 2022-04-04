@@ -1,0 +1,9 @@
+bin
+.vs
+obj
+addons.make
+icon.rc
+mySketch.sln
+mySketch.vcxproj
+mySketch.vcxproj.filters
+mySketch.vcxproj.user
