@@ -1,8 +1,0 @@
-bin
-.vs
-addons.make
-icon.rc
-lines.sln
-lines.vcxproj
-lines.vcxproj.filters
-lines.vcxproj.user
