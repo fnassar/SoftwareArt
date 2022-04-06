@@ -2,6 +2,7 @@
 #include "debugapi.h"
 //--------------------------------------------------------------
 void ofApp::setup() {
+	s = 0;
 	// set screen size
 	ofSetWindowShape(800, 600);
 	ofSetWindowPosition(20, 20);
@@ -45,10 +46,10 @@ void ofApp::draw() {
 	for (int i = 0; i < nLines; i++) {
 		x = 50 + i * n;
 		y = 50;
-		ofLog() << "x1: " << x << " y1: " << y;
+		//ofLog() << "x1: " << x << " y1: " << y;
 		x2 = 50 + i * n;
 		y2 = height - 50;
-		ofLog() << "x2: " << x << " y2: " << y;
+		//ofLog() << "x2: " << x << " y2: " << y;
 		ofDrawLine(x, y, x2, y2);
 	}
 	if (toggle) {
@@ -78,7 +79,11 @@ void ofApp::draw() {
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key) {
-
+	if (key == 's') {
+		img.grabScreen(0, 0, ofGetWidth(), ofGetHeight());
+		s++;
+		img.save("myPic"+(to_string(s))+".jpg");
+	}
 }
 
 //--------------------------------------------------------------

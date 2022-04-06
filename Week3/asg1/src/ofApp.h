@@ -49,4 +49,8 @@ public:
 	//// variables for lines
 	float x, y, x2, y2, x3, y3, n;
 
+	// save screenshots
+	int s;
+	ofImage img;
+
 };
