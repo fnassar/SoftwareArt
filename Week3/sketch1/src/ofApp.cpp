@@ -19,6 +19,7 @@ void ofApp::setup() {
 	controls.add(nLines.set("no. of lines", 30, 5, 50));
 	//// change color
 	controls.add(toggle.set("diffrent colors", false));
+	controls.add(toggle1.set("diffrent colors1", false));
 	controls.add(color.set("color", ofVec3f(200, 200, 200), ofVec3f(0, 0, 0), ofVec3f(255, 255, 255)));
 	controls.add(color1.set("color", ofVec3f(200, 200, 200), ofVec3f(0, 0, 0), ofVec3f(255, 255, 255)));
 	controls.add(color2.set("color", ofVec3f(200, 200, 200), ofVec3f(0, 0, 0), ofVec3f(255, 255, 255)));
@@ -54,6 +55,7 @@ void ofApp::draw() {
 	}
 	if (toggle) {
 		ofSetColor((color1->x), (color1->y), (color1->z));
+		toggle1 = true;
 	}
 
 	for (int i = 0; i < nLines / 2; i++) {
