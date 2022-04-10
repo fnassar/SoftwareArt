@@ -36,13 +36,8 @@ void ofApp::setup() {
 
 	//// To control the shapes
 	controls.setName("Change Location");
-	controls.add(nShapes.set("no. of lines", 10, 5, 20));
-	for (int i = 0; i < 20; i++) {
-		x[i] = ofRandomWidth();
-		y[i] = ofRandomHeight();
-		w[i] = ofRandomWidth() / 5;
-		h[i] = ofRandomHeight() / 5;
-	}
+	controls.add(nShapes.set("no. of shapes", 10, 5, 20));
+	changeLoc();
 
 	//// add parameter groups to GUI
 	all.add(themes);
@@ -55,35 +50,56 @@ void ofApp::update() {
 
 }
 
+void ofApp::changeLoc() {
+	for (int i = 0; i < 20; i++) {
+		x[i] = ofRandomWidth();
+		y[i] = ofRandomHeight();
+		w[i] = ofRandomWidth() / 5;
+		h[i] = ofRandomHeight() / 5;
+	}
+}
+
+void ofApp::drawTriangle(int a, int b, int c) {
+	int t1 = a;
+	int t2 = a - c / 2;
+	int t3 = a + c / 2;
+	int n1 = b + c;
+	int n2 = b - c / 2;
+	int n3 = b - c / 2;
+	ofDrawTriangle(t1,n1,t2,n2,t3,n3);
+}
 //--------------------------------------------------------------
 void ofApp::draw() {
 	ofSetBackgroundColor(10);
 
 	int j = 0;
 	int count = 0;
+	if (nShapesprev != nShapes) {
+		changeLoc();
+	}
 
 	for (int i = 0; i < nShapes; i++) {
 		if (count % 5 == 0) {
 			j = i;
 		}
 
-		if (forest && (!forestprev)) {
-			ofSetColor(forest_array[i - j].x, forest_array[i - j].y, forest_array[i - j].z, 150);
+		if (forest) {
+			ofSetColor(forest_array[i - j].x, forest_array[i - j].y, forest_array[i - j].z, 200);
 			ocean = false;
 			desert = false;
 		}
-		else if (ocean && (!oceanprev)) {
-			ofSetColor(ocean_array[i - j].x, ocean_array[i - j].y, ocean_array[i - j].z, 150);
+		else if (ocean) {
+			ofSetColor(ocean_array[i - j].x, ocean_array[i - j].y, ocean_array[i - j].z, 200);
 			forest = false;
 			desert = false;
 		}
-		else if (desert && (!desertprev)) {
-			ofSetColor(desert_array[i - j].x, desert_array[i - j].y, desert_array[i - j].z, 150);
+		else if (desert) {
+			ofSetColor(desert_array[i - j].x, desert_array[i - j].y, desert_array[i - j].z, 200);
 			forest = false;
 			ocean = false;
 		}
 		else {
-			ofSetColor(255, 255, 255, 150);
+			ofSetColor(255, 255, 255, 200);
 		}
 
 		ofSetCircleResolution(50);
@@ -96,37 +112,36 @@ void ofApp::draw() {
 
 		ofSetRectMode(OF_RECTMODE_CENTER);
 
-		switch (n)
-		{
-		case 1:
-			ofDrawEllipse(b, c, d, e);
-
-		case 2:
-			ofDrawRectangle(b, c, d, e);
-		case 3:
-			ofDrawCircle(b, c, d);
-		default:
-			break;
+		ofLog() << "shape: " << shape;
+		if (shape == 1) {
+			ofDrawRectangle(b, c, d, d);
+		}
+		else if (shape == 2) {
+			drawTriangle(b, c, d);
+		}
+		else {
+			ofDrawCircle(b, c, e);
 		}
 		count++;
 	}
 
 	gui.draw();
 
+	//
 	forestprev = forest;
 	oceanprev = oceanprev;
 	desertprev = desert;
+	//
 	nShapesprev = nShapes;
-	toggle1prev = toggle1;
-	toggle2prev = toggle2;
-	toggle3prev = toggle3;
-	toggle4prev = toggle4;
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key) {
 	//to take a screenshot
 	if (key == ' ') {
+		shape = (shape + 1) % 3;
+	}
+	if (key == 's') {
 		imageScreenshot.grabScreen(0, 0, ofGetWidth(), ofGetHeight());
 		imageScreenshot.save("screenshot" + ofToString(cnt) + ".png");
 		cnt++;

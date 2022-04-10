@@ -21,6 +21,9 @@ public:
 	void windowResized(int w, int h);
 	void dragEvent(ofDragInfo dragInfo);
 	void gotMessage(ofMessage msg);
+	// added functions
+	void changeLoc();
+	void drawTriangle(int a, int b, int c);
 
 	// screen dimensions
 	float width;
@@ -45,10 +48,6 @@ public:
 	//for the other controls
 	ofParameterGroup controls;
 	ofParameter<int> nShapes;
-	ofParameter<bool> toggle1;
-	ofParameter<bool> toggle2;
-	ofParameter<bool> toggle3;
-	ofParameter<bool> toggle4;
 	ofParameter<ofColor> color1;
 
 	//for comparision before and after themes
@@ -58,11 +57,10 @@ public:
 
 	// for comparision before and after other controls
 	int nShapesprev;
-	bool toggle1prev;
-	bool toggle2prev;
-	bool toggle3prev;
-	bool toggle4prev;
-	
+
+	// choose different shapes
+	int shape;
+	ofPolyline triangle;
 	// for locations+dimentions of shapes
 	int x[20];
 	int y[20];
