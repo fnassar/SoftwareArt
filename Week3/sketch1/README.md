@@ -12,8 +12,8 @@ I also gave the user control over the color.
 
 ![image 2](./bin/data/myPic2.jpg "example 2")
 
-I also decided to give more control over the color. So if the user decides to change the colors between the line sets, I decided to add a toggle button to do that.
-I used 3d vectors for colors, but I think it would be smart to use a color gui variable instead.
+I also decided to give more control over the color and the number of lines. So if the user decides to change the colors between the line sets and the number of lines they can. I added a toggle to change between the lines having different colors and all the lines have one color.
+I used 3d vectors for colors, but I think it would be smart to use a color gui variable instead. \
 
 ## Screen Shots
 Here are some more screen shots of the sketch:
@@ -21,3 +21,7 @@ Here are some more screen shots of the sketch:
 ![image 4](./bin/data/myPic4.jpg "example 4")
 ![image 5](./bin/data/myPic5.jpg "example 5")
 ![image 6](./bin/data/myPic6.jpg "example 6")
+![image 7](./bin/data/myPic7.jpg "example 7")
+
+## Video
+[Video Link](https://youtu.be/COAPV2zMQRs "Sketch 1")
