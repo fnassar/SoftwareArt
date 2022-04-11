@@ -54,6 +54,9 @@ public:
 	bool forestprev;
 	bool oceanprev;
 	bool desertprev;
+	bool foresttoggle;
+	bool oceantoggle;
+	bool deserttoggle;
 
 	// for comparision before and after other controls
 	int nShapesprev;
@@ -65,7 +68,6 @@ public:
 	int x[20];
 	int y[20];
 	int w[20];
-	int h[20];
 
 	ofParameterGroup all;
 };

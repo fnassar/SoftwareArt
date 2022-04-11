@@ -28,11 +28,11 @@ void ofApp::setup() {
 	ocean_array[3] = ofVec3f(100, 195, 209);
 	ocean_array[4] = ofVec3f(35, 173, 194);
 
-	desert_array[0] = ofVec3f(249, 190, 60);
-	desert_array[1] = ofVec3f(250, 201, 93);
-	desert_array[2] = ofVec3f(251, 212, 125);
-	desert_array[3] = ofVec3f(252, 222, 158);
-	desert_array[4] = ofVec3f(253, 233, 190);
+	desert_array[0] = ofVec3f(239, 180, 50);
+	desert_array[1] = ofVec3f(240, 191, 83);
+	desert_array[2] = ofVec3f(241, 202, 115);
+	desert_array[3] = ofVec3f(242, 212, 148);
+	desert_array[4] = ofVec3f(243, 223, 180);
 
 	//// To control the shapes
 	controls.setName("Change Location");
@@ -54,8 +54,7 @@ void ofApp::changeLoc() {
 	for (int i = 0; i < 20; i++) {
 		x[i] = ofRandomWidth();
 		y[i] = ofRandomHeight();
-		w[i] = ofRandomWidth() / 5;
-		h[i] = ofRandomHeight() / 5;
+		w[i] = ofRandomWidth() / 4;
 	}
 }
 
@@ -66,11 +65,11 @@ void ofApp::drawTriangle(int a, int b, int c) {
 	int n1 = b + c;
 	int n2 = b - c / 2;
 	int n3 = b - c / 2;
-	ofDrawTriangle(t1,n1,t2,n2,t3,n3);
+	ofDrawTriangle(t1, n1, t2, n2, t3, n3);
 }
 //--------------------------------------------------------------
 void ofApp::draw() {
-	ofSetBackgroundColor(10);
+	ofSetBackgroundColor(250, 250, 240);
 
 	int j = 0;
 	int count = 0;
@@ -99,7 +98,7 @@ void ofApp::draw() {
 			ocean = false;
 		}
 		else {
-			ofSetColor(255, 255, 255, 200);
+			ofSetColor(50, 50, 50, 200);
 		}
 
 		ofSetCircleResolution(50);
@@ -108,11 +107,11 @@ void ofApp::draw() {
 		int b = x[i];
 		int c = y[i];
 		int d = w[i];
-		int e = h[i];
 
 		ofSetRectMode(OF_RECTMODE_CENTER);
 
 		ofLog() << "shape: " << shape;
+
 		if (shape == 1) {
 			ofDrawRectangle(b, c, d, d);
 		}
@@ -120,10 +119,13 @@ void ofApp::draw() {
 			drawTriangle(b, c, d);
 		}
 		else {
-			ofDrawCircle(b, c, e);
+			ofDrawCircle(b, c, d);
 		}
 		count++;
 	}
+	ofSetColor(0, 0, 0, 190);
+	ofDrawBitmapString("Press SPACE to Change Shape", 0.0, height - 20.0);
+	ofDrawBitmapString("Press 's' to take a screenshot", 0.0, height - 10.0);
 
 	gui.draw();
 
