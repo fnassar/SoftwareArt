@@ -33,13 +33,18 @@ This was made to restart the starting color from the array after 5 shapes are dr
 
 ## Sample Output
 This is the initial screen.
-![The first image](/Assignments/Assignment1/images/screenshot0.png)
+![The first image](./bin/data/screenshot0.png)
 
-Here, we __did something_
-![The second image](/Assignments/Assignment1/images/screenshot1.png)
+Here, we changed the shape to triangles
+![The second image](./bin/data/screenshot1.png)
 
-And here _something__
-![The third image](/Assignments/Assignment1/images/screenshot2.png)
+Here, we changed the shape to rectangles
+![The third image](./bin/data/screenshot2.png)
+
+and here are the 3 different color palettes we chose
+![The fourth image](./bin/data/screenshot3.png)
+![The fifth image](./bin/data/screenshot4.png)
+![The sixth image](./bin/data/screenshot5.png)
 
 ## Evaluation
 We are both overall satisfied with our output. The end result is something we both really liked specially because of the theme of shapes and colors were both really relaxing to look at.
