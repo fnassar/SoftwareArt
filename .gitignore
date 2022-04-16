@@ -1,5 +1,8 @@
 *.opendb
 *.obj
+*.vcxproj
+*.filters
+*.user
 
 # Mac Finder files
 *.DS_Store
