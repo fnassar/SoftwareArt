@@ -1,4 +1,5 @@
 *.opendb
+*.obj
 
 # Mac Finder files
 *.DS_Store
