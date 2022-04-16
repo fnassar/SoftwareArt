@@ -21,7 +21,20 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+		void circles(int i, int x, int y, float z, int w, float t);
 		
-		ofxPanelGroup things;
+		ofxPanel gui;
+		ofParameterGroup Params;
+		ofParameter<int> number;
+		ofParameter<int> color;
+		/*ofParameter<bool> forest;
+		ofParameter<bool> forest;*/
+
+
+
+		int cycleVal;
+
+		ofColor circleCol;
+
 
 };
