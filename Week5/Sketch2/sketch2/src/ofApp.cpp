@@ -70,7 +70,11 @@ void ofApp::circles(int i, int x, int y, float z, int w, float time) {
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key) {
-
+	if (key == 's') {
+		img.grabScreen(0, 0, ofGetWidth(), ofGetHeight());
+		s++;
+		img.save("myPic" + (to_string(s)) + ".jpg");
+	}
 }
 
 //--------------------------------------------------------------

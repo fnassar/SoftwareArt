@@ -29,5 +29,8 @@ class ofApp : public ofBaseApp{
 		ofParameter<int> number;
 		ofParameter<int> color;
 		
-		ofColor circleCol;		
+		ofColor circleCol;
+
+		ofImage img;
+		int s = 0;
 };
