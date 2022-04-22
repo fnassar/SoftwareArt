@@ -3,6 +3,7 @@
 *.vcxproj
 *.vcxproj.filters
 *.vcxproj.user
+*.vs/
 
 # Mac Finder files
 *.DS_Store
