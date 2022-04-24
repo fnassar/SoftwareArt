@@ -3,11 +3,8 @@
 *.vcxproj
 *.vcxproj.filters
 *.vcxproj.user
-<<<<<<< HEAD
 *.sln
 *.rc
-=======
->>>>>>> a7a45d873f7d6e33f38f74a69300e9a6f0b82b63
 *.vs/
 
 # Mac Finder files
