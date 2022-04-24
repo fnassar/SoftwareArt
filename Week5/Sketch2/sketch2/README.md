@@ -13,7 +13,7 @@ one (initial saturation)    |     four (low saturation)  |    nine (high saturat
 ![1loop](./bin/data/myPic1.jpg)  |  ![4loops](./bin/data/myPic2.jpg)|  ![9loops](./bin/data/myPic3.jpg)
 
 ## Video
-[![Video](./bin/data/myPic5.jpg)](https://www.youtube.com/embed/sqYQEgtMAYM "Video"){width="50%"}
+[![Video](./bin/data/myPic5.jpg)](https://www.youtube.com/embed/sqYQEgtMAYM "Video")
 
 ## To work on
 - One thing I would like to work on is the noise/sin finction coordination. Because the noise function did not match the circle size created by the sin function, the sketch often shows the circles in the random line which I did not love.
