@@ -3,9 +3,9 @@
 
 //--------------------------------------------------------------
 void ofApp::setup() {
-
+	ofSetBackgroundColor(0,0,0);
 	ofSetVerticalSync(true);
-	ofBackgroundHex(0xfdefc2);
+	//ofBackgroundHex(0xfdefc2);
 	ofSetLogLevel(OF_LOG_NOTICE);
 
 	box2d.init();
@@ -31,7 +31,6 @@ void ofApp::update() {
 	ofRemove(circle2d, ofxBox2dBaseShape::shouldRemoveOffScreen);
 	ofRemove(rect2d, ofxBox2dBaseShape::shouldRemoveOffScreen);
 }
-
 
 //--------------------------------------------------------------
 void ofApp::draw() {
@@ -114,6 +113,9 @@ void ofApp::keyPressed(int key) {
 		img.grabScreen(0, 0, ofGetWidth(), ofGetHeight());
 		s++;
 		img.save("myPic" + (to_string(s)) + ".jpg");
+	}
+	if (key == 'f') {
+		ofToggleFullscreen();
 	}
 
 

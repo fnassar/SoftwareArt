@@ -49,7 +49,7 @@ public:
 		ofTranslate(getPosition());
 		ofSetColor(color);
 		ofFill();
-		ofDrawCircle(0, 0, radius);
+		ofDrawCircle(0, 0, radius); 
 		ofPopMatrix();
 	}
 };
